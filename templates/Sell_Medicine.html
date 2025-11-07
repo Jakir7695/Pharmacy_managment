@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Medicine | MS Jonony Medical Store</title>
+  <link rel="shortcut icon" href="style/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style/Sell_medicine.css" />
+</head>
+
+<body>
+  <!-- ===============================
+       HEADER SECTION
+  ================================ -->
+  <header>
+    MS JONONY MEDICAL STORE
+  </header>
+
+  <!-- ===============================
+       NAVIGATION SECTION
+  ================================ -->
+  <nav>
+    <ul>
+      <li><a href="#" >Home</a></li>
+      <li><a href="#">Add Medicine</a></li>
+      <li class="dropdown">
+        <a href="#">Medicine ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">All Medicine</a></li>
+          <li><a href="#">Date Expire List</a></li>
+          <li><a href="#">All Supplier</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="active">Sell Medicine</a></li>
+      <li class="dropdown">
+        <a href="#">Customer ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">All Customer List</a></li>
+          <li><a href="#">Customer Profile</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Business Report ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Daily Report</a></li>
+          <li><a href="#">Weekly Report</a></li>
+          <li><a href="#">Monthly Report</a></li>
+          <li><a href="#">Yearly Report</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===============================
+       MAIN CONTENT SECTION
+  ================================ -->
+  <main>
+    <div class="container">
+      <h2>Sell Counter</h2>
+
+      <div class="form-container">
+        <!-- === Customer Info === -->
+        <div class="customer-info">
+          <form>
+            <h3>Customer Information</h3>
+
+            <div class="form-group">
+              <label for="customer-name">Customer Name</label>
+              <input type="text" id="customer-name" placeholder="Enter customer name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="village-name">Village Name</label>
+              <input type="text" id="village-name" placeholder="Enter village name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Contact Number</label>
+              <input type="number" id="supplier-contact" placeholder="Enter contact number" required />
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="update-btn">Update</button>
+              <button type="button" class="delete-btn">Delete</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- === Medicine Info === -->
+        <div class="medicine-info">
+          <form>
+            <h3>Medicine Information</h3>
+
+            <div class="form-group">
+              <label for="medicine-name">Medicine Name</label>
+              <input type="text" id="medicine-name" placeholder="Enter medicine name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="company-name">Company Name</label>
+              <input type="text" id="company-name" placeholder="Enter company name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" placeholder="Enter quantity" min="1" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half-width">
+                <label for="Discount">Discount</label>
+                <input type="number" id="taka" placeholder="৳ Taka" min="0" step="1" required />
+                
+                <input type="number" id="percent" placeholder="% Percent" min="0" step="1" required />
+              </div>
+
+              <div class="form-group half-width">
+                <label for="sell-price">Sell Price (৳)</label>
+                <input type="number" id="sell-price" placeholder="Sell price" min="0" step="0.01" required />
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Add Medicine</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ===============================
+           MEDICINE TABLE SECTION
+      ================================ -->
+      <div class="table-section">
+        <h3>Medicine List</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Medicine Name</th>
+              <th>Company</th>
+              <th>Price (৳)</th>
+              <th>Quantity</th>
+              <th>Paid</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Paracetamol</td>
+              <td>Square</td>
+              <td>50</td>
+              <td>2</td>
+              <td>100</td>
+              <td><button class="table-btn">Delete</button></td>
+            </tr>
+            <tr>
+              <td>Monas</td>
+              <td>ACI</td>
+              <td>40</td>
+              <td>1</td>
+              <td>40</td>
+              <td><button class="table-btn">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- === Discount & Total Section === -->
+        <div class="total-section">
+          <div class="form-group">
+            <label for="discount-tk">Discount (৳ / %)</label>
+            <input type="number" id="discount-tk" placeholder=" Taka ৳ / Percent %" required />
+          </div>
+          <div class="form-group">
+            <label for="total">Total Price (৳)</label>
+            <input type="number" id="total" placeholder="Total Price" readonly />
+          </div>
+          <div class="form-group">
+            <label for="Paid"> Payment (৳)</label>
+            <input type="number" id="Paid" placeholder="Pay Money" readonly />
+          </div>
+          <div class="form-group">
+            <label for="Due"> Due  (৳)</label>
+            <input type="number" id="Due" placeholder="Due Money" readonly />
+          </div>
+          <button class="sell-btn">Sell Medicine</button>
+        </div>
+
+        <!-- === Cash Memo Section === -->
+        <div class="cash-memo">
+          <h3>Cash Memo</h3>
+          <div class="button-row">
+            <button class="print-btn">🖨️ Print</button>
+            <button class="exit-btn">❌ Exit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===============================
+       FOOTER SECTION
+  ================================ -->
+  <footer>
+    © 2026 <strong>Shahinur Rahman</strong>. All rights reserved. |
+    Developed & Maintained by <a href="#" target="_blank">OrbonTech</a>
+  </footer>
+</body>
+</html>
