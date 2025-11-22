@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer- MS Jonony Medical Store</title>
+    <link rel="shortcut icon" href="style/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/Customer_Profilee.css">
+</head>
+
+<body>
+    <!-- ===============================
+         HEADER SECTION
+    ================================ -->
+    <header>
+        MS JONONY MEDICAL STORE
+    </header>
+
+    <!-- ===============================
+         NAVIGATION SECTION
+    ================================ -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add-medicine.html">Add Medicine</a></li>
+            <li class="dropdown">
+                <a  href="medicine.html">Medicine <i class="dropdown-arrow">▼</i></a>
+                <ul class="dropdown-menu">
+                    <li><a  href="All_medicine.html">All Medicine</a></li>
+                    <li><a href="date-expire.html">Date Expire List</a></li>
+                    <li><a href="all-supplier.html">All Supplier</a></li>
+                </ul>
+            </li>
+            <li><a href="sell-medicine.html">Sell Medicine</a></li>
+            <li class="dropdown">
+                <a class="active" href="customer.html">Customer <i class="dropdown-arrow">▼</i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="all-customer.html">All Customer List</a></li>
+                    <li><a class="active" href="customer-profile.html">Customer Profile</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a  href="business-report.html">Business Report <i class="dropdown-arrow">▼</i></a>
+                <ul class="dropdown-menu">
+                    <li><a  href="daily-report.html">Daily Report</a></li>
+                    <li><a href="weekly-report.html">Weekly Report</a></li>
+                    <li><a href="monthly-report.html">Monthly Report</a></li>
+                    <li><a href="yearly-report.html">Yearly Report</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </nav>
+ <!-- ===============================
+         MAIN CONTENT SECTION
+    ================================ -->
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>Customer Profile</h2>
+            </br>
+               
+            </div>
+
+<!-- ===============================
+     CUSTOMER DETAILS + PROFILE PHOTO
+================================ -->
+<div class="customer-info">
+    <div class="customer-photo">
+        <img src="style/profile.png" alt="Customer Photo">
+    </div>
+
+    <div class="customer-details">
+        <p><strong>Name:</strong> Abdul Karim</p>
+        <p><strong>Village:</strong> Keshabpur</p>
+        <p><strong>Contact:</strong> 01XXXXXXXXX</p>
+    </div>
+    
+    
+    <button class="pay-btn">Pay</button>
+</div>
+
+            <!-- Summary Cards Section -->
+            <div class="summary-section">
+                <div class="summary-card">
+                    <h3>Total Buy </h3>
+                    <p class="count">156</p>
+                    
+                </div>
+                <div class="summary-card">
+                    <h3> Total Paided</h3>
+                    <p class="count">৳ 12,540</p>
+                    
+                </div>
+                <div class="summary-card">
+                    <h3> Due </h3>
+                    <p class="count">50000</p>
+                    <span>Total Due</span>
+                </div>
+            </div>
+                   <!-- Medicine Table -->
+<div class="medicine-table-container">
+    <table class="medicine-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Medicine Name</th>
+                <th>Company</th>
+                <th>Total Buy</th>
+                <th>Total payment</th>
+                <th>Due</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>2024-01-15</td>
+                <td>Napa Extra</td>
+                <td>Beximco Pharma</td>
+                <td>150</td>
+                <td>100</td>
+                <td>50</td>
+            </tr>
+            <!-- More rows here -->
+        </tbody>
+
+    </table>
+</div>
+
+
+
+
+
+
+
+
+                            
+
+
+
+ <!-- ===============================
+         FOOTER SECTION
+    ================================ -->
+    <footer>
+        © 2025 <strong>Shahinur Rahman</strong>. All rights reserved. |
+        Developed & Maintained by 
+        <a href="#" target="_blank">OrbonTech</a>
+    </footer>
+
+    <script>
+        // Simple JavaScript for search and filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const priceFilter = document.getElementById('price-filter');
+            const tableRows = document.querySelectorAll('.medicine-table tbody tr');
+            
+            function filterMedicines() {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                tableRows.forEach(row => {
+                    const medicineName = row.cells[1].textContent.toLowerCase();
+                    let showRow = medicineName.includes(searchTerm);
+                    row.style.display = showRow ? '' : 'none';
+                });
+            }
+            
+            searchInput.addEventListener('input', filterMedicines);
+            priceFilter.addEventListener('change', filterMedicines);
+        });
+    </script>
+</body>
+</html>
